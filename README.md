@@ -1,4 +1,4 @@
-# Minimal example of multiinclude bug
+# Minimal example of multiinclude & multiinherit bug
 
 ## pre-commit
 
@@ -22,6 +22,7 @@ Advanced oelint..........................................................Failed
 - exit code: 1
 
 /minimal-multiinclude/meta-test/meta-append2/recipes-extended/images/image-debug.bbappend:1:warning:oelint.var.multiinclude:'append2-image.inc' is included multiple times [branch:true]
+/minimal-multiinclude/meta-test/meta-append1/recipes-extended/images/append-image.inc:1:warning:oelint.var.multiinherit:'test' is included multiple times [branch:true]
 /minimal-multiinclude/meta-test/meta-append1/recipes-extended/images/image-debug.bbappend:1:warning:oelint.var.multiinclude:'append-image.inc' is included multiple times [branch:true]
 ```
 
@@ -32,6 +33,7 @@ Run `oelint-adv **/* --rulefile=.oelint-ruleset.json --quiet`.
 Output:
 
 ```text
+/home/miwanicki/projects/yocto/zarhus/minimal-multiinclude/meta-test/meta-append1/recipes-extended/images/append-image.inc:1:warning:oelint.var.multiinherit:'test' is included multiple times [branch:true]
 /minimal-multiinclude/meta-test/meta-append1/recipes-extended/images/image-debug.bbappend:1:warning:oelint.var.multiinclude:'append-image.inc' is included multiple times [branch:true]
 /minimal-multiinclude/meta-test/meta-append2/recipes-extended/images/image-debug.bbappend:1:warning:oelint.var.multiinclude:'append2-image.inc' is included multiple times [branch:true]
 /minimal-multiinclude/meta-test2/meta-append3/recipes-extended/images/image-debug.bbappend:1:warning:oelint.var.multiinclude:'append3-image.inc' is included multiple times [branch:true]

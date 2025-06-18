@@ -1,3 +1,4 @@
 {
-  "oelint.var.multiinclude": "warning"
+  "oelint.var.multiinclude": "warning",
+  "oelint.var.multiinherit": "warning"
 }
