@@ -1,0 +1,15 @@
+---
+default_stages: [pre-commit]
+default_install_hook_types: [pre-commit, commit-msg]
+
+repos:
+  - repo: https://github.com/priv-kweihmann/oelint-adv
+    rev: 8.1.0
+    hooks:
+      - id: oelint-adv
+        args: [--rulefile=.oelint-ruleset.json, --quiet]
+        name: Advanced oelint
+        entry: oelint-adv
+        language: python
+        language_version: python3
+        files: .*\.(bb)|(bbappend)|(bbclass)$
